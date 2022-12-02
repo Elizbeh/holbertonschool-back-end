@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-''' Script that returns information about a given employee ID 
+''' Script that returns information about a given employee ID
 and his/her TODO list
 '''
 
@@ -8,13 +8,13 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    req = get('https://jsonplaceholder.typicode.com/todos/')
-    details = req.json()
+    res = get('https://jsonplaceholder.typicode.com/todos/')
+    details = res.json()
     completed = 0
     total = 0
     tasks = []
-    req1 = get('https://jsonplaceholder.typicode.com/users/')
-    details1 = req1.json()
+    res1 = get('https://jsonplaceholder.typicode.com/users/')
+    details1 = res1.json()
 
     for count in details1:
         if count.get('id') == int(argv[1]):
